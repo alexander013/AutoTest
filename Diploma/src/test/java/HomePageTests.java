@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.IOException;
 
 
-public class HomePageTest {
+public class HomePageTests {
     private static WebDriver driver;
     private static WebDriverWait wait;
 

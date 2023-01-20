@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b7d2cef-ca07-451d-a6dd-2c5c59d1d233" name="Changes" comment="устранение замечаний и добавлены тесты">
-      <change afterPath="$PROJECT_DIR$/src/test/java/CatalogProductTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/BasketTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CatalogProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CatalogProductTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp_catalog/screenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/tmp_catalog/screenshot.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,69 +35,69 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/KurochkinAV/Desktop/autotesting-java-basics-diploma/Diploma&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/KurochkinAV/Desktop/Test.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\KurochkinAV\IdeaProjects\DiplomProjectAutotester\drivers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CatalogProductTest.ProductSearchTest">
-    <configuration name="CatalogProductTest.BooksTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BasketTests.IncreaseDecreaseQuantityGoodsTest">
+    <configuration name="BasketTests.DeleteProductTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diploma" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CatalogProductTest" />
-      <option name="METHOD_NAME" value="BooksTest" />
+      <option name="MAIN_CLASS_NAME" value="BasketTests" />
+      <option name="METHOD_NAME" value="DeleteProductTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CatalogProductTest.ClothesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BasketTests.IncreaseDecreaseQuantityGoodsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diploma" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CatalogProductTest" />
-      <option name="METHOD_NAME" value="ClothesTest" />
+      <option name="MAIN_CLASS_NAME" value="BasketTests" />
+      <option name="METHOD_NAME" value="IncreaseDecreaseQuantityGoodsTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CatalogProductTest.ElectronicsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BasketTests.NoValidCouponTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diploma" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CatalogProductTest" />
-      <option name="METHOD_NAME" value="ElectronicsTest" />
+      <option name="MAIN_CLASS_NAME" value="BasketTests" />
+      <option name="METHOD_NAME" value="NoValidCouponTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CatalogProductTest.ProductSearchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BasketTests.ValidCouponTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diploma" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CatalogProductTest" />
-      <option name="METHOD_NAME" value="ProductSearchTest" />
+      <option name="MAIN_CLASS_NAME" value="BasketTests" />
+      <option name="METHOD_NAME" value="ValidCouponTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CatalogProductTest.SubMenuElectronicsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CatalogProductTests.AddBasketTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diploma" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CatalogProductTest" />
-      <option name="METHOD_NAME" value="SubMenuElectronicsTest" />
+      <option name="MAIN_CLASS_NAME" value="CatalogProductTests" />
+      <option name="METHOD_NAME" value="AddBasketTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -104,11 +105,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CatalogProductTest.ProductSearchTest" />
-        <item itemvalue="JUnit.CatalogProductTest.ClothesTest" />
-        <item itemvalue="JUnit.CatalogProductTest.BooksTest" />
-        <item itemvalue="JUnit.CatalogProductTest.SubMenuElectronicsTest" />
-        <item itemvalue="JUnit.CatalogProductTest.ElectronicsTest" />
+        <item itemvalue="JUnit.BasketTests.IncreaseDecreaseQuantityGoodsTest" />
+        <item itemvalue="JUnit.BasketTests.DeleteProductTest" />
+        <item itemvalue="JUnit.BasketTests.NoValidCouponTest" />
+        <item itemvalue="JUnit.BasketTests.ValidCouponTest" />
+        <item itemvalue="JUnit.CatalogProductTests.AddBasketTest" />
       </list>
     </recent_temporary>
   </component>

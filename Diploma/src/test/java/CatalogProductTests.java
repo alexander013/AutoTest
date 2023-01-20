@@ -9,12 +9,14 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
 
-public class CatalogProductTest {
+public class CatalogProductTests {
 
     private static WebDriver driver;
 
@@ -377,27 +379,120 @@ public class CatalogProductTest {
 //----------------------------------------------------------------------------------------------------------------------
 //    Тест на проведение сортировки в разделе КАТАЛОГ - по популярности, по отзывам, последние,
 //    по возрастанию цены, по убыванию цены
-//    @Test
+    @Test
+    public void SortingTest()
+    {
+//        Открытие  страницы сайта
+        driver.navigate().to("http://intershop5.skillbox.ru/");
+//        Элемент для перехода в раздел КАТАЛОГ
+        var CatalogElement = By.id("menu-item-46");
+//        Элемент ВЫПАДАЮЩИХ СПИСКОВ
+        var SortigElement = By.cssSelector("select[name='orderby']");
+//          Элемент ОБЫЧНАЯ СОРТИРОВКА
+        var MenuOrderElement = By.cssSelector("select[name='orderby'] option:nth-of-type(1)");
+//          Элемент ПО ПОПУЛЯРНОСТИ
+        var PopularityElement = By.cssSelector("select[name='orderby'] option:nth-of-type(2)");
+//          Элемент ПО ОТЗЫВАМ
+        var RatingElement = By.cssSelector("select[name='orderby'] option:nth-of-type(3)");
+//          Элемент ПОСЛЕДНИЕ
+        var DateElement = By.cssSelector("select[name='orderby'] option:nth-of-type(4)");
+//          Элемент ПО ВОЗРАСТАНИЮ ЦЕНЫ
+        var PriceElement = By.cssSelector("select[name='orderby'] option:nth-of-type(5)");
+//          Элемент ПО УБЫВАНИЮ ЦЕНЫ
+        var PriceDescElement = By.cssSelector("select[name='orderby'] option:nth-of-type(6)");
+//          Клик по элементу для перехода в КАТАЛОГ
+        driver.findElement(CatalogElement).click();
+//      Выбор элемента ВЫПАДАЮЩЕГО СПИСКА
+        Select Sortig = new Select(driver.findElement(SortigElement));
+//      Выбор из ВЫПАДАЮЩЕГО СПСИКА "По популярности"
+        Sortig.selectByVisibleText("По популярности");
+//      Проверка на соответсвие текста
+        Assert.assertEquals("Текст не соответствует", "По популярности", driver.findElement(PopularityElement).getText());
+//      Выбор элемента ВЫПАДАЮЩЕГО СПИСКА
+        Select MenuOrderSortig = new Select(driver.findElement(SortigElement));
+//      Выбор из ВЫПАДАЮЩЕГО СПСИКА "Обычная сортировка"
+        MenuOrderSortig.selectByVisibleText("Обычная сортировка");
+//      Проверка на соответсвие текста
+        Assert.assertEquals("Текст не соответствует", "Обычная сортировка", driver.findElement(MenuOrderElement).getText());
+//      Выбор элемента ВЫПАДАЮЩЕГО СПИСКА
+        Select RatingSortig = new Select(driver.findElement(SortigElement));
+//      Выбор из ВЫПАДАЮЩЕГО СПСИКА "По отзывам"
+        RatingSortig.selectByVisibleText("По отзывам");
+//      Проверка на соответсвие текста
+        Assert.assertEquals("Текст не соответствует", "По отзывам", driver.findElement(RatingElement).getText());
+//        Выбор элемента ВЫПАДАЮЩЕГО СПИСКА
+        Select DateSortig = new Select(driver.findElement(SortigElement));
+//      Выбор из ВЫПАДАЮЩЕГО СПСИКА "Последние"
+        DateSortig.selectByVisibleText("Последние");
+//      Проверка на соответсвие текста
+        Assert.assertEquals("Текст не соответствует", "Последние", driver.findElement(DateElement).getText());
+//      Выбор элемента ВЫПАДАЮЩЕГО СПИСКА
+        Select PriceSortig = new Select(driver.findElement(SortigElement));
+//      Выбор из ВЫПАДАЮЩЕГО СПСИКА "По возрастанию цены"
+        PriceSortig.selectByVisibleText("По возрастанию цены");
+//      Проверка на соответсвие текста
+        Assert.assertEquals("Текст не соответствует", "По возрастанию цены", driver.findElement(PriceElement).getText());
+//        Выбор элемента ВЫПАДАЮЩЕГО СПИСКА
+        Select PriceDescSortig = new Select(driver.findElement(SortigElement));
+//      Выбор из ВЫПАДАЮЩЕГО СПСИКА "По возрастанию цены"
+        PriceDescSortig.selectByVisibleText("По убыванию цены");
+//      Проверка на соответсвие текста
+        Assert.assertEquals("Текст не соответствует", "По убыванию цены", driver.findElement(PriceDescElement).getText());
+    }
 //----------------------------------------------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------------------------------------------
-//    Тест на переходы по КАТЕГОРИЯМ ТОВАРОВ в разделе КАТАЛОГ
-//    @Test
-//----------------------------------------------------------------------------------------------------------------------
-
-//----------------------------------------------------------------------------------------------------------------------
-//    Тест на применение ФИЛЬТРА в разделе КАТАЛОГ
-//    @Test
+//    Тест на наличие в разделе КАТАЛОГ блока КАТЕГРРИЯ ТОВАРОВ
+    @Test
+    public void ProductCategoryPhonesTest()
+    {
+//        Открытие  страницы сайта
+        driver.navigate().to("http://intershop5.skillbox.ru/");
+//        Элемент для перехода в раздел КАТАЛОГ
+        var CatalogElement = By.id("menu-item-46");
+//        Элемент названия КАТЕГОРИИ ТОВАРОВ
+        var ProductCategoryElementLocator = By.xpath("(//span[@class='widget-title'])[1]");
+//        Клик на раздел КАТАЛОГ
+        driver.findElement(CatalogElement).click();
+//        Проверка на наличие элемента блока КАТЕГОРИИ ТОВАРОВ
+        Assert.assertTrue("Элемент не найден", driver.findElement(ProductCategoryElementLocator).isDisplayed());
+//        Проверка на наличие текста названия КАТЕГОРИИ ТОВАРОВ
+        Assert.assertEquals("Текст не соответствует", "КАТЕГОРИИ ТОВАРОВ", driver.findElement(ProductCategoryElementLocator).getText());
+    }
 //----------------------------------------------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------------------------------------------
 //    Тест на добавление товара в корзину в разделе КАТАЛОГ
-//    @Test
-//----------------------------------------------------------------------------------------------------------------------
+    @Test
+    public void AddBasketTest()
+    {
+//        Открытие  страницы сайта
+        driver.navigate().to("http://intershop5.skillbox.ru/");
+//        Элемент для перехода в раздел КАТАЛОГ
+        var CatalogElement = By.id("menu-item-46");
+//        Элемент товара Apple Watch 6
+//        Кнопка В КОРЗИНУ
+        var ButtonBasketElementLocator = By.cssSelector("a[data-product_id='15']");
+//        Кнопка ПОДРОБНЕЕ
+        var ButtonMoreDetailedElementLocator = By.xpath("//*[@class='added_to_cart wc-forward']");
+//        Элемент раздела КОРЗИНА
+        var BasketElementzLocator = By.cssSelector("span.current");
+//        Наведение на кнопку В КОРЗИНУ
+        driver.findElement(CatalogElement).click();
+        new Actions(driver)
+                .moveToElement(driver.findElement(ButtonBasketElementLocator))
+                .perform();
+//        Клик по кнопке В КОРЗИНУ
+        driver.findElement(ButtonBasketElementLocator).click();
+//        Ожидание появления кнопки ПОДРОБНЕЕ
+        wait.until(ExpectedConditions.elementToBeClickable(ButtonMoreDetailedElementLocator));
+//        Клик по кнопке ПОДРОБНЕЕ
+        driver.findElement(ButtonMoreDetailedElementLocator).click();
+//        Проверка на наличие элемента раздела КОРЗИНА
+        Assert.assertTrue("Элемент не найден", driver.findElement(BasketElementzLocator).isDisplayed());
+//        Проверка на соответствие текста названия КОРЗИНА
+        Assert.assertEquals("Текст не соответствует", "Корзина", driver.findElement(BasketElementzLocator).getText());
 
+    }
 //----------------------------------------------------------------------------------------------------------------------
-//    Тест на использование ПОСТРАНИЧНОЙ НАВИГАЦИИ
-//    @Test
-//----------------------------------------------------------------------------------------------------------------------
-
 }
