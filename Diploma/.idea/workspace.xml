@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b7d2cef-ca07-451d-a6dd-2c5c59d1d233" name="Changes" comment="устранение замечаний и добавлены тесты">
-      <change afterPath="$PROJECT_DIR$/src/test/java/BasketTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RegistrationAuthorizationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CatalogProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CatalogProductTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HomePageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp_catalog/screenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/tmp_catalog/screenshot.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +38,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/KurochkinAV/Desktop/Test.java",
+    "last_opened_file_path": "C:/Users/KurochkinAV/Desktop/autotesting-java-basics-diploma/Diploma",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -52,7 +50,7 @@
       <recent name="C:\Users\KurochkinAV\IdeaProjects\DiplomProjectAutotester\drivers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BasketTests.IncreaseDecreaseQuantityGoodsTest">
+  <component name="RunManager" selected="JUnit.MakingAnOrderTests.MakingOrderTest">
     <configuration name="BasketTests.DeleteProductTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diploma" />
       <option name="PACKAGE_NAME" value="" />
@@ -73,31 +71,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasketTests.NoValidCouponTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MakingAnOrderTests.MakingOrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diploma" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BasketTests" />
-      <option name="METHOD_NAME" value="NoValidCouponTest" />
+      <option name="MAIN_CLASS_NAME" value="MakingAnOrderTests" />
+      <option name="METHOD_NAME" value="MakingOrderTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasketTests.ValidCouponTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RegistrationAuthorizationTests.AuthorizationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diploma" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BasketTests" />
-      <option name="METHOD_NAME" value="ValidCouponTest" />
+      <option name="MAIN_CLASS_NAME" value="RegistrationAuthorizationTests" />
+      <option name="METHOD_NAME" value="AuthorizationTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CatalogProductTests.AddBasketTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RegistrationAuthorizationTests.RegistrationButtonEnterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Diploma" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CatalogProductTests" />
-      <option name="METHOD_NAME" value="AddBasketTest" />
+      <option name="MAIN_CLASS_NAME" value="RegistrationAuthorizationTests" />
+      <option name="METHOD_NAME" value="RegistrationButtonEnterTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -105,11 +103,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MakingAnOrderTests.MakingOrderTest" />
+        <item itemvalue="JUnit.RegistrationAuthorizationTests.AuthorizationTest" />
+        <item itemvalue="JUnit.RegistrationAuthorizationTests.RegistrationButtonEnterTest" />
         <item itemvalue="JUnit.BasketTests.IncreaseDecreaseQuantityGoodsTest" />
         <item itemvalue="JUnit.BasketTests.DeleteProductTest" />
-        <item itemvalue="JUnit.BasketTests.NoValidCouponTest" />
-        <item itemvalue="JUnit.BasketTests.ValidCouponTest" />
-        <item itemvalue="JUnit.CatalogProductTests.AddBasketTest" />
       </list>
     </recent_temporary>
   </component>
@@ -173,6 +171,122 @@
     <MESSAGE value="устранение замечаний и добавлены тесты #2" />
     <MESSAGE value="устранение замечаний и добавлены тесты" />
     <option name="LAST_COMMIT_MESSAGE" value="устранение замечаний и добавлены тесты" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>93</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>119</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>128</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MakingAnOrderTests.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
