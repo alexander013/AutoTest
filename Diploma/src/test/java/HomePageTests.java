@@ -11,13 +11,13 @@ import java.io.IOException;
 
 
 public class HomePageTests {
-    private static WebDriver driver;
-    private static WebDriverWait wait;
+    private WebDriver driver;
+    private WebDriverWait wait;
 
 
     //    Необходимо сделать так, чтобы браузер открывался один раз
-    @BeforeClass
-    public static void setUp() {
+    @Before
+    public void setUp() {
         System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
         driver = new ChromeDriver();
 //     Открытие браузера во весь экран
@@ -25,8 +25,8 @@ public class HomePageTests {
         wait = new WebDriverWait(driver, 5);
     }
 
-    @AfterClass
-    public static void tearDown() throws IOException {
+    @After
+    public void tearDown() throws IOException {
         var sourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(sourceFile, new File("..\\Diploma\\tmp_home\\screenshot.png"));
         driver.quit();
