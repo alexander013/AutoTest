@@ -19,7 +19,6 @@ public class CatalogProductTests {
 
     private WebDriverWait wait;
 
-//    Необходимо сделать так, чтобы браузер открывался один раз
 
     @Before
     public void setUp()
@@ -37,6 +36,87 @@ public class CatalogProductTests {
         FileUtils.copyFile(sourceFile, new File("..\\Diploma\\tmp_catalog\\screenshot.png"));
         driver.quit();
     }
+
+
+    //        Элемент для перехода в раздел КАТАЛОГ
+    private final By CatalogElement = By.id("menu-item-46");
+    //        Элемент названия раздела КАТАЛОГ
+    private final By TitleCatalogElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text()='Каталог']");
+    //        Элемент БЫТОВАЯ ТЕХНИКА, который появляется при наведении на раздел КАТАЛОГ
+    private final By HomeAppliancesElementLocator = By.id("menu-item-119");
+    //        Элемент ХОЛОДИЛЬНИКИ в под меню БЫТОВАЯ ТЕХНИКА
+    private final By RefrigeratorsElementLocator = By.id("menu-item-120");
+    //        Элемент заголовка раздела ХОЛОДИЛЬНИКИ
+    private final By TitleRefrigeratorsElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text()='Холодильники']");
+    //        Заголовок раздела БЫТОВАЯ ТЕХНИКА
+    private final By TitleHomeAppliancesElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text()='Бытовая техника']");
+    //        Элемент СТИРАЛЬНЫЕ МАШИНЫ в под меню БЫТОВАЯ ТЕХНИКА
+    private final By WashingMachinesElementLocator = By.id("menu-item-121");
+    //        Элемент заголовка раздела СТИРАЛЬНЫЕ МАШИНЫ
+    private final By TitleWashingMachinesElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text()='Стиральные машины']");
+    //        Элемент ЭЛЕКТРОНИКА, который появляется при наведении на раздел КАТАЛОГ
+    private final By ElectronicsElementLocator = By.id("menu-item-47");
+    //        Заголовок раздела ЭЛЕКТРОНИКА
+    private final By TitleElectronicsElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text()='Электроника']");
+    //        Элемент ТЕЛЕФОНЫ
+    private final By PhonesElement = By.id("menu-item-114");
+    //        Элемент ПЛАНШЕТЫ
+    private final By TabletsElement = By.id("menu-item-116");
+    //        Элемент ТЕЛЕВИЗОРЫ
+    private final By TelevisionsElement = By.id("menu-item-118");
+    //        Элемент ФОТО/ВИДЕО
+    private final By PhotosVideosElement = By.id("menu-item-117");
+    //        Элемент ЧАСЫ
+    private final By WatchesElement = By.id("menu-item-115");
+    //        Заголовок раздела ТЕЛЕФОНЫ
+    private final By TitlePhoneElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text() = 'Телефоны']");
+    //        Заголовок раздела ПЛАНШЕТЫ
+    private final By TitleTabletsElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text() = 'Планшеты']");
+    //        Заголовок раздела ТЕЛЕВИЗОРЫ
+    private final By TitleTelevisionsElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text() = 'Телевизоры']");
+    //        Заголовок раздела ФОТО/ВИДЕО
+    private final By TitlePhotosVideosElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text() = 'Фото/видео']");
+    //        Заголовок раздела ЧАСЫ
+    private final By TitleWatchesElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text() = 'Часы']");
+    //        Элемент КНИГИ, который появляется при наведении на раздел КАТАЛОГ
+    private final By BooksElementLocator = By.id("menu-item-180");
+    //        Заголовок раздела КНИГИ
+    private final By TitleBooksElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text() = 'Книги']");
+    //        Элемент ОДЕЖДА, который появляется при наведении на раздел КАТАЛОГ
+    private final By ClothesElementLocator = By.id("menu-item-48");
+    //        Заголовок раздела КНИГИ
+    private final By TitleClothesElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text() = 'Одежда']");
+    //        Элемент поля поиска
+    private final By SearchFieldElement = By.name("s");
+    //        Элемент кнопки поиска
+    private final By ButtonSearSubmitElement = By.className("searchsubmit");
+    //        Элемент заголовка искомого товара (в данном случае "iPad Air 2020 64gb wi-fi")
+    private final By TitleProductElementLocator = By.xpath("//h1[text() = 'iPad Air 2020 64gb wi-fi']");
+    //        Элемент ВЫПАДАЮЩИХ СПИСКОВ
+    private final By SortigElement = By.cssSelector("select[name='orderby']");
+    //          Элемент ОБЫЧНАЯ СОРТИРОВКА
+    private final By MenuOrderElement = By.cssSelector("select[name='orderby'] option:nth-of-type(1)");
+    //          Элемент ПО ПОПУЛЯРНОСТИ
+    private final By PopularityElement = By.cssSelector("select[name='orderby'] option:nth-of-type(2)");
+    //          Элемент ПО ОТЗЫВАМ
+    private final By RatingElement = By.cssSelector("select[name='orderby'] option:nth-of-type(3)");
+    //          Элемент ПОСЛЕДНИЕ
+    private final By DateElement = By.cssSelector("select[name='orderby'] option:nth-of-type(4)");
+    //          Элемент ПО ВОЗРАСТАНИЮ ЦЕНЫ
+    private final By PriceElement = By.cssSelector("select[name='orderby'] option:nth-of-type(5)");
+    //          Элемент ПО УБЫВАНИЮ ЦЕНЫ
+    private final By PriceDescElement = By.cssSelector("select[name='orderby'] option:nth-of-type(6)");
+    //        Элемент названия КАТЕГОРИИ ТОВАРОВ
+    private final By ProductCategoryElementLocator = By.xpath("(//span[@class='widget-title'])[1]");
+    //        Элемент товара Apple Watch 6
+    //        Кнопка В КОРЗИНУ
+    private final By ButtonBasketElementLocator = By.cssSelector("a[data-product_id='15']");
+    //        Кнопка ПОДРОБНЕЕ
+    private final By ButtonMoreDetailedElementLocator = By.xpath("//*[@class='added_to_cart wc-forward']");
+    //        Элемент раздела КОРЗИНА
+    private final By BasketElementzLocator = By.cssSelector("span.current");
+
+
 //----------------------------------------------------------------------------------------------------------------------
 //    Тест на  переход в раздел КАТАЛОГ
     @Test
@@ -44,10 +124,6 @@ public class CatalogProductTests {
     {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент названия раздела КАТАЛОГ
-        var TitleCatalogElementLocator = By.xpath("//h1[@class='entry-title ak-container']");
 //        Клик для перехода в раздел КАТАЛОГ
         driver.findElement(CatalogElement).click();
 //        Проверка на наличие элемента названия раздела КАТАЛОГ
@@ -62,14 +138,6 @@ public class CatalogProductTests {
     {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент БЫТОВАЯ ТЕХНИКА, который появляется при наведении на раздел КАТАЛОГ
-        var HomeAppliancesElementLocator = By.id("menu-item-119");
-//        Элемент ХОЛОДИЛЬНИКИ в под меню БЫТОВАЯ ТЕХНИКА
-        var RefrigeratorsElementLocator = By.id("menu-item-120");
-//        Элемент заголовка раздела ХОЛОДИЛЬНИКИ
-        var TitleRefrigeratorsElementLocator = By.xpath("//h1[@class='entry-title ak-container']");
 //        Наведение курсора мыши на КАТАЛОГ
         new Actions(driver)
                 .moveToElement(driver.findElement(CatalogElement))
@@ -96,12 +164,6 @@ public class CatalogProductTests {
     {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент БЫТОВАЯ ТЕХНИКА, который появляется при наведении на раздел КАТАЛОГ
-        var HomeAppliancesElementLocator = By.id("menu-item-119");
-//        Заголовок раздела БЫТОВАЯ ТЕХНИКА
-        var TitleHomeAppliancesElementLocator = By.xpath("//h1[@class='entry-title ak-container']");
 //        Наведение курсора мыши на КАТАЛОГ
         new Actions(driver)
                 .moveToElement(driver.findElement(CatalogElement))
@@ -125,14 +187,6 @@ public class CatalogProductTests {
     {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент БЫТОВАЯ ТЕХНИКА, который появляется при наведении на раздел КАТАЛОГ
-        var HomeAppliancesElementLocator = By.id("menu-item-119");
-//        Элемент СТИРАЛЬНЫЕ МАШИНЫ в под меню БЫТОВАЯ ТЕХНИКА
-        var WashingMachinesElementLocator = By.id("menu-item-121");
-//        Элемент заголовка раздела СТИРАЛЬНЫЕ МАШИНЫ
-        var TitleWashingMachinesElementLocator = By.xpath("//h1[@class='entry-title ak-container']");
 //        Наведение курсора мыши на КАТАЛОГ
         new Actions(driver)
                 .moveToElement(driver.findElement(CatalogElement))
@@ -159,12 +213,6 @@ public class CatalogProductTests {
     {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент ЭЛЕКТРОНИКА, который появляется при наведении на раздел КАТАЛОГ
-        var ElectronicsElementLocator = By.id("menu-item-47");
-//        Заголовок раздела ЭЛЕКТРОНИКА
-        var TitleElectronicsElementLocator = By.xpath("//h1[@class='entry-title ak-container']");
 //        Наведение курсора мыши на КАТАЛОГ
         new Actions(driver)
                 .moveToElement(driver.findElement(CatalogElement))
@@ -187,30 +235,6 @@ public class CatalogProductTests {
     public void SubMenuElectronicsTest() {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент ЭЛЕКТРОНИКА, который появляется при наведении на раздел КАТАЛОГ
-        var ElectronicsElementLocator = By.id("menu-item-47");
-//        Элемент ТЕЛЕФОНЫ
-        var PhonesElement = By.id("menu-item-114");
-//        Элемент ПЛАНШЕТЫ
-        var TabletsElement = By.id("menu-item-116");
-//        Элемент ТЕЛЕВИЗОРЫ
-        var TelevisionsElement = By.id("menu-item-118");
-//        Элемент ФОТО/ВИДЕО
-        var PhotosVideosElement = By.id("menu-item-117");
-//        Элемент ЧАСЫ
-        var WatchesElement = By.id("menu-item-115");
-//        Заголовок раздела ТЕЛЕФОНЫ
-        var TitlePhoneElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text() = 'Телефоны']");
-//        Заголовок раздела ПЛАНШЕТЫ
-        var TitleTabletsElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text() = 'Планшеты']");
-//        Заголовок раздела ТЕЛЕВИЗОРЫ
-        var TitleTelevisionsElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text() = 'Телевизоры']");
-//        Заголовок раздела ФОТО/ВИДЕО
-        var TitlePhotosVideosElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text() = 'Фото/видео']");
-//        Заголовок раздела ЧАСЫ
-        var TitleWatchesElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text() = 'Часы']");
 //        Наведение курсора мыши на КАТАЛОГ
         new Actions(driver)
                 .moveToElement(driver.findElement(CatalogElement))
@@ -302,12 +326,6 @@ public class CatalogProductTests {
     {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент КНИГИ, который появляется при наведении на раздел КАТАЛОГ
-        var BooksElementLocator = By.id("menu-item-180");
-//        Заголовок раздела КНИГИ
-        var TitleBooksElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text() = 'Книги']");
 //        Наведение курсора мыши на КАТАЛОГ
         new Actions(driver)
                 .moveToElement(driver.findElement(CatalogElement))
@@ -330,12 +348,6 @@ public class CatalogProductTests {
     {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент ОДЕЖДА, который появляется при наведении на раздел КАТАЛОГ
-        var ClothesElementLocator = By.id("menu-item-48");
-//        Заголовок раздела КНИГИ
-        var TitleClothesElementLocator = By.xpath("//h1[@class='entry-title ak-container'][text() = 'Одежда']");
 //        Наведение курсора мыши на КАТАЛОГ
         new Actions(driver)
                 .moveToElement(driver.findElement(CatalogElement))
@@ -357,12 +369,6 @@ public class CatalogProductTests {
     public void ProductSearchTest()
     {
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент поля поиска
-        var SearchFieldElement = By.name("s");
-//        Элемент кнопки поиска
-        var ButtonSearSubmitElement = By.className("searchsubmit");
-//        Элемент заголовка искомого товара (в данном случае "iPad Air 2020 64gb wi-fi")
-        var TitleProductElementLocator = By.xpath("//h1[text() = 'iPad Air 2020 64gb wi-fi']");
 //        Ввод "iPad Air 2020 64gb wi-fi" в поле поиска
         driver.findElement(SearchFieldElement).sendKeys("ipad air 2020 64gb wi-fi");
 //        Клик по кнопке поиска
@@ -381,22 +387,6 @@ public class CatalogProductTests {
     {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент ВЫПАДАЮЩИХ СПИСКОВ
-        var SortigElement = By.cssSelector("select[name='orderby']");
-//          Элемент ОБЫЧНАЯ СОРТИРОВКА
-        var MenuOrderElement = By.cssSelector("select[name='orderby'] option:nth-of-type(1)");
-//          Элемент ПО ПОПУЛЯРНОСТИ
-        var PopularityElement = By.cssSelector("select[name='orderby'] option:nth-of-type(2)");
-//          Элемент ПО ОТЗЫВАМ
-        var RatingElement = By.cssSelector("select[name='orderby'] option:nth-of-type(3)");
-//          Элемент ПОСЛЕДНИЕ
-        var DateElement = By.cssSelector("select[name='orderby'] option:nth-of-type(4)");
-//          Элемент ПО ВОЗРАСТАНИЮ ЦЕНЫ
-        var PriceElement = By.cssSelector("select[name='orderby'] option:nth-of-type(5)");
-//          Элемент ПО УБЫВАНИЮ ЦЕНЫ
-        var PriceDescElement = By.cssSelector("select[name='orderby'] option:nth-of-type(6)");
 //          Клик по элементу для перехода в КАТАЛОГ
         driver.findElement(CatalogElement).click();
 //      Выбор элемента ВЫПАДАЮЩЕГО СПИСКА
@@ -445,10 +435,6 @@ public class CatalogProductTests {
     {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент названия КАТЕГОРИИ ТОВАРОВ
-        var ProductCategoryElementLocator = By.xpath("(//span[@class='widget-title'])[1]");
 //        Клик на раздел КАТАЛОГ
         driver.findElement(CatalogElement).click();
 //        Проверка на наличие элемента блока КАТЕГОРИИ ТОВАРОВ
@@ -465,15 +451,6 @@ public class CatalogProductTests {
     {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент товара Apple Watch 6
-//        Кнопка В КОРЗИНУ
-        var ButtonBasketElementLocator = By.cssSelector("a[data-product_id='15']");
-//        Кнопка ПОДРОБНЕЕ
-        var ButtonMoreDetailedElementLocator = By.xpath("//*[@class='added_to_cart wc-forward']");
-//        Элемент раздела КОРЗИНА
-        var BasketElementzLocator = By.cssSelector("span.current");
 //        Наведение на кнопку В КОРЗИНУ
         driver.findElement(CatalogElement).click();
         new Actions(driver)

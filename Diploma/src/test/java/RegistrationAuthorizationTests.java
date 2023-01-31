@@ -32,26 +32,40 @@ public class RegistrationAuthorizationTests {
         FileUtils.copyFile(sourceFile, new File("..\\Diploma\\tmp_RegAuthoriz\\screenshot.png"));
         driver.quit();
     }
+
+    //        Элемент кнопки ВОЙТИ вправом верхнем углу сайта
+    private final By ButtonEnterElement = By.className("account");
+    //        Элемент кнопки ЗАРЕГИСТРИРОВАТЬСЯ в форме авторизации
+    private final By ButtonRegistrElementLocator = By.xpath("//button[@type='button']");
+    //        Элемент поля "Имя пользователя"
+    private final By RegUserNameElement = By.id("reg_username");
+    //        Элемент поля "Адрес почты"
+    private final By RegEmailElement = By.id("reg_email");
+    //        Элемент поля "Пароль"
+    private final By RegPasswordElement = By.id("reg_password");
+    //        Элемент кнопки ЗАРЕГИСТРИРОВАТЬСЯ в форме регистрации
+    private final By RegButtonElement = By.name("register");
+    //        Элемент успешной регистрации "Регистрация завершена"
+    private final By RegistrationCompletedElementLocator = By.xpath("//div[@class='content-page']//div");
+    //        Элемент МОЙ АККАУНТ
+    private final By MyAccountElement = By.id("menu-item-30");
+    //        Элемент "Имя пользователя или почта"
+    private final By UserNameElement = By.id("username");
+    //        Элемент "Пароль"
+    private final By PasswordElement = By.id("password");
+    //        Элемент кнопки ВОЙТИ
+    private final By LoginButtonEnterElement = By.name("login");
+    //        Элемент "Привет Sacha"
+    private final By HelloSachaElementLocator = By.cssSelector("div.woocommerce-MyAccount-content > p:nth-of-type(1)");
+
+
 //----------------------------------------------------------------------------------------------------------------------
 //    Тест регистрации через кнопку ВОЙТИ вправом верхнем углу сайта
     @Test
     public void RegistrationButtonEnterTest()
     {
+//        Открытие сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент кнопки ВОЙТИ вправом верхнем углу сайта
-        var ButtonEnterElement = By.className("account");
-//        Элемент кнопки ЗАРЕГИСТРИРОВАТЬСЯ в форме авторизации
-        var ButtonRegistrElementLocator = By.xpath("//button[@type='button']");
-//        Элемент поля "Имя пользователя"
-        var RegUserNameElement = By.id("reg_username");
-//        Элемент поля "Адрес почты"
-        var RegEmailElement = By.id("reg_email");
-//        Элемент поля "Пароль"
-        var RegPasswordElement = By.id("reg_password");
-//        Элемент кнопки ЗАРЕГИСТРИРОВАТЬСЯ в форме регистрации
-        var RegButtonElement = By.name("register");
-//        Элемент успешной регистрации "Регистрация завершена"
-        var RegistrationCompletedElementLocator = By.xpath("//div[@class='content-page']//div");
 //        Клик по кнопке ВОЙТИ вправом верхнем углу сайта
         driver.findElement(ButtonEnterElement).click();
 //        Клик по кнопке ЗАРЕГИСТРИРОВАТЬСЯ в форме авторизации
@@ -77,17 +91,8 @@ public class RegistrationAuthorizationTests {
     @Test
     public void AuthorizationTest()
     {
+//        Открытие сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент МОЙ АККАУНТ
-        var MyAccountElement = By.id("menu-item-30");
-//        Элемент "Имя пользователя или почта"
-        var UserNameElement = By.id("username");
-//        Элемент "Пароль"
-        var PasswordElement = By.id("password");
-//        Элемент кнопки ВОЙТИ
-        var LoginButtonEnterElement = By.name("login");
-//        Элемент "Привет Sacha"
-        var HelloSachaElementLocator = By.cssSelector("div.woocommerce-MyAccount-content > p:nth-of-type(1)");
 //        Клик на МОЙ АККАУНТ
         driver.findElement(MyAccountElement).click();
 //        Ввод "Sacha"

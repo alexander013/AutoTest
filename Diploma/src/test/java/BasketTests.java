@@ -33,27 +33,49 @@ public class BasketTests {
         driver.quit();
     }
 
+
+    //        Элемент для перехода в раздел КАТАЛОГ
+    private final By CatalogElement = By.id("menu-item-46");
+    //        Элемент кнопки ПРИМЕНИТЬ КУПОН
+    private final By ButtonCouponElement = By.name("apply_coupon");
+    //        Элемент поля ВВЕДИТЕ КОД КУПОНА
+    private final By EnterCouponCodeElement = By.id("coupon_code");
+    //        Сообщение об успешном добавлении купона
+    private final By CouponSuccessfullyAddedElementLoator = By.cssSelector("div.woocommerce-message");
+    //        Элемент товара Apple Watch 6
+    //        Кнопка В КОРЗИНУ
+    private final By ButtonBasketElementLocator = By.cssSelector("a[data-product_id='15']");
+    //        Кнопка ПОДРОБНЕЕ
+    private final By ButtonMoreDetailedElementLocator = By.xpath("//*[@class='added_to_cart wc-forward']");
+    //        Элемент раздела КОРЗИНА
+    private final By BasketElementzLocator = By.cssSelector("span.current");
+    //        Сообщение НЕВЕРНЫЙ КУПОН
+    private final By InvalidCouponElementLoator = By.cssSelector("ul.woocommerce-error");
+    //        Кнопка удаления товара из корзины
+    private final By DeleteButtonElementLocator = By.cssSelector("a[data-product_id='15']");
+    //        Сообщение об удалении товара
+    private final By MessageDeleteProductElementLocator = By.cssSelector("div.woocommerce-message");
+    //        Элемент для возвращения удалённого товара из корзины
+    private final By ReturnElementLocator = By.cssSelector("a.restore-item");
+    //        Товар в корзине Apple Watch 6
+    private final By AppleWatchElementLocator = By.cssSelector("td.product-name");
+    //        Элемент увеличения количества товара
+    private final By QuantityElementLocator = By.xpath("//input[@type='number']");
+    //        Загрузочный элемент при обновлении корзины
+    private final By block = By.cssSelector("div.blockUI.blockOverlay");
+    //        Общая сумма товара
+    private final By TotalCostElementLocator = By.xpath("(//bdi[text() = '174950,00'])[1]");
+
+
+
+
+
     //----------------------------------------------------------------------------------------------------------------------
 //    Тест на применение действующего купона sert500
     @Test
     public void ValidCouponTest() {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент кнопки ПРИМЕНИТЬ КУПОН
-        var ButtonCouponElement = By.name("apply_coupon");
-//        Элемент поля ВВЕДИТЕ КОД КУПОНА
-        var EnterCouponCodeElement = By.id("coupon_code");
-//        Сообщение об успешном добавлении купона
-        var CouponSuccessfullyAddedElementLoator = By.cssSelector("div.woocommerce-message");
-//        Элемент товара Apple Watch 6
-//        Кнопка В КОРЗИНУ
-        var ButtonBasketElementLocator = By.cssSelector("a[data-product_id='15']");
-//        Кнопка ПОДРОБНЕЕ
-        var ButtonMoreDetailedElementLocator = By.xpath("//*[@class='added_to_cart wc-forward']");
-//        Элемент раздела КОРЗИНА
-        var BasketElementzLocator = By.cssSelector("span.current");
 //        Наведение на кнопку В КОРЗИНУ
         driver.findElement(CatalogElement).click();
         new Actions(driver)
@@ -91,21 +113,6 @@ public class BasketTests {
     public void NoValidCouponTest() {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент кнопки ПРИМЕНИТЬ КУПОН
-        var ButtonCouponElement = By.name("apply_coupon");
-//        Элемент поля ВВЕДИТЕ КОД КУПОНА
-        var EnterCouponCodeElement = By.id("coupon_code");
-//        Сообщение НЕВЕРНЫЙ КУПОН
-        var InvalidCouponElementLoator = By.cssSelector("ul.woocommerce-error");
-//        Элемент товара Apple Watch 6
-//        Кнопка В КОРЗИНУ
-        var ButtonBasketElementLocator = By.cssSelector("a[data-product_id='15']");
-//        Кнопка ПОДРОБНЕЕ
-        var ButtonMoreDetailedElementLocator = By.xpath("//*[@class='added_to_cart wc-forward']");
-//        Элемент раздела КОРЗИНА
-        var BasketElementzLocator = By.cssSelector("span.current");
 //        Наведение на кнопку В КОРЗИНУ
         driver.findElement(CatalogElement).click();
         new Actions(driver)
@@ -143,23 +150,6 @@ public class BasketTests {
     public void DeleteProductTest() {
         //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент товара Apple Watch 6
-//        Кнопка В КОРЗИНУ
-        var ButtonBasketElementLocator = By.cssSelector("a[data-product_id='15']");
-//        Кнопка ПОДРОБНЕЕ
-        var ButtonMoreDetailedElementLocator = By.xpath("//*[@class='added_to_cart wc-forward']");
-//        Элемент раздела КОРЗИНА
-        var BasketElementzLocator = By.cssSelector("span.current");
-//        Кнопка удаления товара из корзины
-        var DeleteButtonElementLocator = By.cssSelector("a[data-product_id='15']");
-//        Сообщение об удалении товара
-        var MessageDeleteProductElementLocator = By.cssSelector("div.woocommerce-message");
-//        Элемент для возвращения удалённого товара из корзины
-        var ReturnElementLocator = By.cssSelector("a.restore-item");
-//        Товар в корзине Apple Watch 6
-        var AppleWatchElementLocator = By.cssSelector("td.product-name");
 //        Наведение на кнопку В КОРЗИНУ
         driver.findElement(CatalogElement).click();
         new Actions(driver)
@@ -201,23 +191,8 @@ public class BasketTests {
 //    Тест на увеличение, уменьшение количества товара
     @Test
     public void IncreaseDecreaseQuantityGoodsTest() throws InterruptedException {
-        //        Открытие  страницы сайта
+//        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел КАТАЛОГ
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент товара Apple Watch 6
-//        Кнопка В КОРЗИНУ
-        var ButtonBasketElementLocator = By.cssSelector("a[data-product_id='15']");
-//        Кнопка ПОДРОБНЕЕ
-        var ButtonMoreDetailedElementLocator = By.xpath("//*[@class='added_to_cart wc-forward']");
-//        Элемент раздела КОРЗИНА
-        var BasketElementzLocator = By.cssSelector("span.current");
-//        Элемент увеличения количества товара
-        var QuantityElementLocator = By.xpath("//input[@type='number']");
-//        Загрузочный элемент при обновлении корзины
-        var block = By.cssSelector("div.blockUI.blockOverlay");
-//        Общая сумма товара
-        var TotalCostElementLocator = By.xpath("(//bdi[text() = '174950,00'])[1]");
 //        Наведение на кнопку В КОРЗИНУ
         driver.findElement(CatalogElement).click();
         new Actions(driver)

@@ -34,48 +34,52 @@ public class MakingAnOrderTests {
         driver.quit();
     }
 
+
+    //        Элемент МОЙ АККАУНТ
+    private final By MyAccountElement = By.id("menu-item-30");
+    //        Элемент "Имя пользователя или почта"
+    private final By UserNameElement = By.id("username");
+    //        Элемент "Пароль"
+    private final By PasswordElement = By.id("password");
+    //        Элемент кнопки ВОЙТИ
+    private final By LoginButtonEnterElement = By.name("login");
+    //        Элемент "Привет Sacha"
+    private final By HelloSachaElementLocator = By.cssSelector("div.woocommerce-MyAccount-content > p:nth-of-type(1)");
+    //        Элемент Каталог
+    private final By CatalogElement = By.id("menu-item-46");
+    //        Элемент товара Apple Watch 6
+    //        Кнопка В КОРЗИНУ
+    private final By ButtonBasketElementLocator = By.cssSelector("a[data-product_id='15']");
+    //        Кнопка ПОДРОБНЕЕ
+    private final By ButtonMoreDetailedElementLocator = By.xpath("//*[@class='added_to_cart wc-forward']");
+    //        Кнопка ОФОРМИТЬ ЗАКАЗ
+    private final By ButtonPlaceOrderElementLocator = By.cssSelector("div.wc-proceed-to-checkout > a");
+    //        Поле ИМЯ
+    private final By NameElement = By.id("billing_first_name");
+    //        Поле ФАМИЛИЯ
+    private final By FamilyElement = By.id("billing_last_name");
+    //        Поле АДРЕС
+    private final By AddressElement = By.id("billing_address_1");
+    //        Поле ГОРОД/НАСЕЛЕННЫЙ ПУНКТ
+    private final By CityElement = By.id("billing_city");
+    //        Поле ОБЛАСТЬ
+    private final By AreaElement = By.id("billing_state");
+    //        Поле ПОЧТОВЫЙ ИНДЕКС
+    private final By PostalCodeElement = By.id("billing_postcode");
+    //        Поле ТЕЛЕФОН
+    private final By PhoneElement = By.id("billing_phone");
+    //        Поле АДРЕС ПОЧТЫ
+    private final By EmailElement = By.id("billing_email");
+    //        Кнопка ОФОРМИТЬ ЗАКАЗ
+    private final By ButtonElement = By.id("place_order");
+    //        Элемент ЗАКАЗ ПОЛУЧЕН
+    private final By OrderReceivedElementLocator = By.xpath("//h2[@class='post-title'][text()='Заказ получен']");
+
+
     @Test
     public void MakingOrderTest() {
+//        Открытие сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент МОЙ АККАУНТ
-        var MyAccountElement = By.id("menu-item-30");
-//        Элемент "Имя пользователя или почта"
-        var UserNameElement = By.id("username");
-//        Элемент "Пароль"
-        var PasswordElement = By.id("password");
-//        Элемент кнопки ВОЙТИ
-        var LoginButtonEnterElement = By.name("login");
-//        Элемент "Привет Sacha"
-        var HelloSachaElementLocator = By.cssSelector("div.woocommerce-MyAccount-content > p:nth-of-type(1)");
-//        Элемент Каталог
-        var CatalogElement = By.id("menu-item-46");
-//        Элемент товара Apple Watch 6
-//        Кнопка В КОРЗИНУ
-        var ButtonBasketElementLocator = By.cssSelector("a[data-product_id='15']");
-//        Кнопка ПОДРОБНЕЕ
-        var ButtonMoreDetailedElementLocator = By.xpath("//*[@class='added_to_cart wc-forward']");
-//        Кнопка ОФОРМИТЬ ЗАКАЗ
-        var ButtonPlaceOrderElementLocator = By.cssSelector("div.wc-proceed-to-checkout > a");
-//        Поле ИМЯ
-        var NameElement = By.id("billing_first_name");
-//        Поле ФАМИЛИЯ
-        var FamilyElement = By.id("billing_last_name");
-//        Поле АДРЕС
-        var AddressElement = By.id("billing_address_1");
-//        Поле ГОРОД/НАСЕЛЕННЫЙ ПУНКТ
-        var CityElement = By.id("billing_city");
-//        Поле ОБЛАСТЬ
-        var AreaElement = By.id("billing_state");
-//        Поле ПОЧТОВЫЙ ИНДЕКС
-        var PostalCodeElement = By.id("billing_postcode");
-//        Поле ТЕЛЕФОН
-        var PhoneElement = By.id("billing_phone");
-//        Поле АДРЕС ПОЧТЫ
-        var EmailElement = By.id("billing_email");
-//        Кнопка ОФОРМИТЬ ЗАКАЗ
-        var ButtonElement = By.id("place_order");
-//        Элемент ЗАКАЗ ПОЛУЧЕН
-        var OrderReceivedElementLocator = By.xpath("//h2[@class='post-title'][text()='Заказ получен']");
 //        Клик по МОЙ АККАУНТ
         driver.findElement(MyAccountElement).click();
 //        Ввод "Sacha"

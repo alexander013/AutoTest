@@ -14,8 +14,6 @@ public class HomePageTests {
     private WebDriver driver;
     private WebDriverWait wait;
 
-
-    //    Необходимо сделать так, чтобы браузер открывался один раз
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
@@ -34,15 +32,90 @@ public class HomePageTests {
 // ----------------------------------------------------------------------------------------------------------------------
 
 
+    //        Элемент блока главной страницы, подтверждающий нахождение пользователя на главной странице
+    private final By PromoWrap1ElementLocator = By.xpath("//*[@class = 'promo-wrap1']");
+    //        Элемент для перехода в раздел "Главная"
+    private final By HomeElementLocator = By.cssSelector("li#menu-item-26");
+    //        Элемент для перехода в раздел "Каталог"
+    private final By KatalogElementLocator = By.cssSelector("li#menu-item-46");
+    //        Элемент заголовка раздела "Каталог"
+    private final By TitleKatalogElementLocator = By.xpath("//h1[text() = 'Каталог']");
+    //        Элемент для перехода в раздел "Мой аккаунт"
+    private final By AccauntElementLocator = By.cssSelector("li#menu-item-30");
+    //        Элемент заголовка заполнения формы раздела "Мой аккаунт"
+    private final By TitleAccauntElementLocator = By.xpath("//h2[@class='entry-title'][text() = 'Мой аккаунт']");
+    //        Элемент для перехода в раздел "Корзина"
+    private final By KorzinaElementLocator = By.cssSelector("li#menu-item-29");
+    //        Элемент заголовка раздела "Корзина"
+    private final By TitleKorzinaElementLocator = By.xpath("//h2[@class = 'entry-title'][text() = 'Корзина']");
+    //          Элемент блока КНИГИ
+    private final By KnigiLocator = By.xpath("(//*[@class='caption wow fadeIn'])[1]");
+    //        Элемент заголовка раздела "Книги"
+    private final By TitleKnigiLocator = By.xpath("(//h1)[2]");
+    //        Элемент заголовка блока КНИГИ
+    private final By NameKnigiLocator = By.xpath("(//*[@class='caption wow fadeIn'])[1]//h4");
+    //        Элемент заголовка раздела ПЛАНШЕТЫ
+    private final By TitleTabletsElementLocator = By.cssSelector("h1.entry-title.ak-container");
+    //          Элемент блока ПЛАНШЕТЫ
+    private final By PlanshetLocator = By.xpath("(//*[@class='caption wow fadeIn'])[2]");
+    //        Элемент заголовка блока ПЛАНШЕТЫ
+    private final By TitlePlanshetLocator = By.xpath("(//*[@class='caption wow fadeIn'])[2]//h4");
+    //        Элемент для перехода в раздел "Оформление заказа"
+    private final By OformlenieElementLocator = By.cssSelector("li#menu-item-31");
+    //        Элемент заголовка раздела ОФОРМЛЕНИЕ ЗАКАЗА
+    private final By TitleOformlenieZakazaLocator = By.xpath("//h2[@class='post-title'][text() = 'Оформление заказа']");
+    //        Элемент блока ФОТОАППАРАТЫ
+    private final By CameraUnitElementLocator = By.xpath("(//*[@class='caption wow fadeIn'])[3]");
+    //        Элемент заголовка раздела ФОТОАППАРТЫ
+    private final By TitleCameraUnitElementLocator = By.xpath("//h1[@class='entry-title ak-container']");
+    //        Элемент банера УЖЕ В ПРОДАЖЕ
+    private final By BannerLocator = By.xpath("(//div[@class='promo-image'])[4]");
+    //        Элементы на баннере УЖЕ В ПРОДАЖЕ
+    private final By BanerElementLocator = By.xpath("(//*[@class='caption wow fadeIn'])[4]");
+    //        Название товара на баннере УЖЕ В ПРОДАЖЕ
+    private final By AlreadyOnSaleElementLocator = By.xpath("(//*[@class='caption wow fadeIn'])[4]//div[@class='promo-desc-title']");
+    //        Название товара, которое указано в разделе (ВСЕ ТОВАРЫ) после клика по баннеру УЖЕ В ПРОДАЖЕ
+    private final By TitleProductElementLocator = By.xpath("//h1[@class='product_title entry-title']");
+    //        Элемент ГЛАВНАЯ для всех разделов
+    private final By MainElementlocator = By.xpath("//div[@class='woocommerce-breadcrumb accesspress-breadcrumb']//a[1]");
+    //        Элемент кнопка скроллинга наверх страницы
+    private final By AkTopElementLocator = By.cssSelector("div[style='right: 20px;']");
+    //        Элемент в самом низу страницы сайта
+    private final By SkillboxElementLocator = By.xpath("//*[@class = 'site-info']");
+    //        Элемент с контактами внизу сайта
+    private final By BannerTextElementLocator = By.xpath("//*[@class = 'banner-text wow fadeInLeft']");
+    //        Элемент товара БАБОЧКА в разделе распродажа
+    private final By ButterflyElementLocator = By.xpath("(//*[@data-wow-delay='1s'])[5]");
+    //        Элемент ПРОСМОТРЕННЫЕ ТОВАРЫ
+    private final By ProductsViewedElementLocator = By.id("woocommerce_recently_viewed_products-2");
+    //        Элемент товара АННИГИЛЯТОРНАЯ ПУШКА в разделе РАСПРОДАЖА
+    private final By AnnihilatorCannonElementLocator = By.xpath("(//li[@data-wow-delay='0s'])[1]");
+    //        Кнопка READ MORE (АННИГИЛЯТОРНАЯ ПУШКА)
+    private final By ReadMoreButtonElementLocator = By.xpath("(//a[@data-quantity='1'])[5]");
+    //        Элемент слайдера РАСПРОДАЖА
+    private final By UnitElementLocator = By.xpath("(//ul)[5]");
+    //        Элемент заголовка товара после клика по кнопке READ MORE (АННИГИЛЯТОРНАЯ ПУШКА)
+    private final By TitleAnnihilatorCannonElementLocator = By.xpath("//h1[@class = 'product_title entry-title']");
+    //        Элемент текста названия товара в разделе РАСПРОДАЖА (АННИГИЛЯТОРНАЯ ПУШКА)
+    private final By ElementTovarLocator = By.xpath("(//h3)[5]");
+    //        Элемент в слайдере НОВЫЕ ПОСТУПЛЕНИЯ
+    private final By TovarNewArrvalsLocator = By.xpath("(//div[@class = 'item-img'])[25]");
+    //        Элемент кнопки В КОРЗИНУ
+    private final By ButtonBasketElementLocator = By.xpath("(//a[@data-product_id = '3754'])[1]");
+    //        Элемент кнопки ПОДРОБНЕЕ
+    private final By MoreElementLocator = By.xpath("//a[@class='added_to_cart wc-forward']");
+    //        Элемент заголовка раздела КОРЗИНА
+    private final By TitleBasketElementLocator = By.xpath("//span[@class='current'][text() = 'Корзина']");
+
+
+
     //  ТЕСТ НА ПЕРЕХОД ПО ССЫЛКЕ http://intershop5.skillbox.ru/ И ПОПАДАНИЕ НА ГЛАВНУЮ СТРАНИЦУ САЙТА
     @Test
     public void OpenHomePageTest() {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент раздела "Главная"
-        var HomPageElement = By.className("apwidget_title");
 //        Проверка переходим ли в раздел "Главная"
-        Assert.assertTrue("Не отобразилась главная страница", driver.findElement(HomPageElement).isDisplayed());
+        Assert.assertTrue("Не отобразилась главная страница", driver.findElement(PromoWrap1ElementLocator).isDisplayed());
     }
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -53,24 +126,13 @@ public class HomePageTests {
     public void GoingToCatalogTest() {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел "Главная"
-        var HomeElementLocator = By.cssSelector("li#menu-item-26");
-//        Элемент для перехода в раздел "Каталог"
-        var KatalogElementLocator = By.xpath("//a[text() = 'Каталог']");
-//        Элемент заголовка раздела "Каталог"
-        var TitleKatalogElementLocator = By.xpath("//h1[text() = 'Каталог']");
-//        Элемент блока главной страницы, подтверждающий нахождение пользователя на главной странице
-        var PromoWrap1ElementLocator = By.xpath("//*[@class = 'promo-wrap1']");
-//        Текст раздела КАТАЛОГ
-        var TextCatalog = driver.findElement(KatalogElementLocator).getText();
 //        Нажатие в главном меню на раздел "Каталог"
         driver.findElement(KatalogElementLocator).click();
-//        Текст заголовка раздела КАТАЛОГ
-        var TextTitleCatalog = driver.findElement(TitleKatalogElementLocator).getText();
 //        Проверка на нахождение элемента, который подтверждает что мы в разделе "Каталог"
         Assert.assertTrue("Элемент не найден", driver.findElement(TitleKatalogElementLocator).isDisplayed());
 //        Проверка на соответсвие текста названия раздела КАТАЛОГ с заголовком раздела КААТЛОГ
-        Assert.assertEquals("Неверный текст !", TextCatalog, TextTitleCatalog);
+        Assert.assertEquals("Неверный текст !", driver.findElement(KatalogElementLocator).getText(),
+                driver.findElement(TitleKatalogElementLocator).getText());
 //        Нажатие в главном меню на раздел "Главная"
         driver.findElement(HomeElementLocator).click();
 //        Проверка на нахождение элемента, который подтверждает что мы в разделе "Главная"
@@ -85,14 +147,6 @@ public class HomePageTests {
     public void GoingToMyAccountTest() {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел "Главная"
-        var HomeElementLocator = By.cssSelector("li#menu-item-26");
-//        Элемент для перехода в раздел "Мой аккаунт"
-        var AccauntElementLocator = By.xpath("(//a[text() = 'Мой аккаунт'])[1]");
-//        Элемент заголовка заполнения формы раздела "Мой аккаунт"
-        var TitleAccauntElementLocator = By.xpath("//h2[@class='entry-title']");
-//        Элемент блока главной страницы, подтверждающий нахождение пользователя на главной странице
-        var PromoWrap1ElementLocator = By.xpath("//*[@class = 'promo-wrap1']");
 //        Нажатие в главном меню на раздел "Мой аккаунт"
         driver.findElement(AccauntElementLocator).click();
 //        Проверка на нахождение элемента, который подтверждает что мы в разделе "Мой аккаунт"
@@ -111,14 +165,6 @@ public class HomePageTests {
     public void GoingToMyBasketTest() {
         //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел "Главная"
-        var HomeElementLocator = By.xpath("(//a[@aria-current='page'])[1]");
-//        Элемент для перехода в раздел "Корзина"
-        var KorzinaElementLocator = By.xpath("(//a[text() = 'Корзина'])[1]");
-//        Элемент заголовка раздела "Корзина"
-        var TitleKorzinaElementLocator = By.xpath("//h2[@class = 'entry-title']");
-//        Элемент подтверждающий нахождения в разделе "Главная"
-        var HomeElement = By.className("apwidget_title");
 //        Нажатие в главном меню на раздел "Корзина"
         driver.findElement(KorzinaElementLocator).click();
 //        Проверка на нахождение элемента, который подтверждает что мы в разделе "Корзина"
@@ -126,7 +172,7 @@ public class HomePageTests {
 //        Нажатие в главном меню на раздел "Главная"
         driver.findElement(HomeElementLocator).click();
 //        Проверка на нахождение элемента, который подтверждает что мы в разделе "Главная"
-        Assert.assertTrue("Элемент не найден", driver.findElement(HomeElement).isDisplayed());
+        Assert.assertTrue("Элемент не найден", driver.findElement(PromoWrap1ElementLocator).isDisplayed());
     }
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -137,32 +183,21 @@ public class HomePageTests {
     public void GoingToBookBlockTest() {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//         Элемент для перехода в раздел "Главная"
-        var HomeElementLocator = By.xpath("(//div[@class='store-menu']//a)[1]");
-//          Элемент блока КНИГИ
-        var KnigiLocator = By.xpath("(//*[@class='caption wow fadeIn'])[1]");
-//        Элемент заголовка раздела "Книги"
-        var TitleKnigiLocator = By.xpath("(//h1)[2]");
-//        Элемент подтверждающий нахождения в разделе "Главная"
-        var HomeElement = By.className("apwidget_title");
 //        Ожидание появления, в блоке КНИГИ, элементов: книги, посмотреть
         wait.until(ExpectedConditions.elementToBeClickable(KnigiLocator));
-//        Элемент заголовка блока КНИГИ
-        var NameKnigiLocator = By.xpath("(//*[@class='caption wow fadeIn'])[1]//h4");
-//        Текст названия блока КНИГИ
-        var TextNameKnigiLocator = driver.findElement(NameKnigiLocator).getText();
+        var TextNameKnigi = driver.findElement(NameKnigiLocator).getText();
 //        Клик по блоку КНИГИ
         driver.findElement(KnigiLocator).click();
+        var TextTitleKnigi = driver.findElement(TitleKnigiLocator).getText();
 //        Проверка на наличие заголовка раздела КНИГИ
         Assert.assertTrue("Элемент не найден", driver.findElement(TitleKnigiLocator).isDisplayed());
-//        Текст заголовка раздела КНИГИ
-        var TextTitleKnigiLocator = driver.findElement(TitleKnigiLocator).getText();
 //        Проверка на совпадение текста названия блока "Книги" с названем заголовка раздела
-        Assert.assertEquals("Неверный текст !", TextNameKnigiLocator, TextTitleKnigiLocator);
+        Assert.assertEquals("Неверный текст !", TextNameKnigi,
+                TextTitleKnigi);
 //        Переход на главную страницу
         driver.findElement(HomeElementLocator).click();
 //        Проверка подтверждающая нахождение на главной странице
-        Assert.assertTrue("Элемент не найден", driver.findElement(HomeElement).isDisplayed());
+        Assert.assertTrue("Элемент не найден", driver.findElement(PromoWrap1ElementLocator).isDisplayed());
     }
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -173,28 +208,17 @@ public class HomePageTests {
     public void GoingToBlockTabletsTest() {
 //        Открытие сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент заголовка раздела ПЛАНШЕТЫ
-        var TitleTabletsElementLocator = By.cssSelector("h1.entry-title.ak-container");
-//        Элемент ГЛАВНАЯ в разделе ПЛАНШЕТЫ
-        var MainElementlocator = By.xpath("//a[@href = 'http://intershop5.skillbox.ru']");
-//        Элемент блока главной страницы, подтверждающий нахождение пользователя на главной странице
-        var PromoWrap1ElementLocator = By.xpath("//*[@class = 'promo-wrap1']");
-//          Элемент блока ПЛАНШЕТЫ
-        var PlanshetLocator = By.xpath("(//*[@class='caption wow fadeIn'])[2]");
-//        Элемент заголовка блока ПЛАНШЕТЫ
-        var TitlePlanshetLocator = By.xpath("(//*[@class='caption wow fadeIn'])[2]//h4");
 //          Ожидание появления, в блоке ПЛАНШЕТЫ, элементов: планшеты, посмотреть
         wait.until(ExpectedConditions.elementToBeClickable(PlanshetLocator));
-//          Текст названия блока ПЛАНШЕТЫ на главной странице
         var TextTitlePlanshet = driver.findElement(TitlePlanshetLocator).getText();
 //          Клик по элементу блока ПЛАНШЕТЫ
         driver.findElement(PlanshetLocator).click();
+        var TextTitleTablets = driver.findElement(TitleTabletsElementLocator).getText();
 //        Проверка на наличие заголовка ПЛАНШЕТЫ в разделе ПЛАНШЕТЫ
         Assert.assertTrue("Элемент не найден", driver.findElement(TitleTabletsElementLocator).isDisplayed());
-//        Текст заголовка раздела ПЛАНШЕТЫ
-        var TextTitleTablets = driver.findElement(TitleTabletsElementLocator).getText();
 //        Проверка текста на совпадение названия блока ПЛАНШЕТЫ с текстом заголовка раздела ПЛАНШЕТЫ
-        Assert.assertEquals("Неверный текст", TextTitlePlanshet, TextTitleTablets);
+        Assert.assertEquals("Неверный текст", TextTitlePlanshet,
+                TextTitleTablets);
 //        Клик по элементу ГЛАВНАЯ в разделе ПЛАНШЕТЫ
         driver.findElement(MainElementlocator).click();
 //        Проверка на наличие элемента  блока главной страницы, подтверждающий нахождение пользователя на главной странице
@@ -211,12 +235,6 @@ public class HomePageTests {
     public void GoingToOrderRegistrationTest() {
 //        Открытие  страницы сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент для перехода в раздел "Оформление заказа"
-        var OformlenieElementLocator = By.cssSelector("#menu-item-31 > a");
-//        Элемент заголовка раздела "Корзина"
-        var TitleKorzinaElementLocator = By.xpath("//h2[@class = 'entry-title']");
-//        Элемент заголовка раздела ОФОРМЛЕНИЕ ЗАКАЗА
-        var TitleOformlenieZakazaLocator = By.xpath("//h2[@class='post-title']");
 //        Нажатие в главном меню на раздел "Оформление заказа"
         driver.findElement(OformlenieElementLocator).click();
 //        Проверка на нахождение элемента, который подтверждает что мы в разделе "Оформление заказа"
@@ -233,20 +251,8 @@ public class HomePageTests {
     public void GoingToTheCameraUnitTest() {
 //        Открытие сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент блока ФОТОАППАРАТЫ
-        var CameraUnitElementLocator = By.xpath("(//*[@class='caption wow fadeIn'])[3]");
-//        Элемент заголовка раздела ФОТОАППАРТЫ
-        var TitleCameraUnitElementLocator = By.xpath("//h1[@class='entry-title ak-container']");
-//        Элемент ГЛАВНАЯ в разделе ФОТОАППАРАТЫ
-        var MainElementlocator = By.xpath("//div[@class='woocommerce-breadcrumb accesspress-breadcrumb']//a[1]");
-//        Элемент блока главной страницы, подтверждающий нахождение пользователя на главной странице
-        var PromoWrap1ElementLocator = By.xpath("//*[@class = 'promo-wrap1']");
-//        Элемент заголовка блока ФОТОАППАРТЫ
-        var TitleBlockCameraUnitLocator = By.xpath("(//*[@class='caption wow fadeIn'])[3]//h4");
 //          Ожидание появления, в блоке ФОТОАППАРАТЫ, элементов: фотоаппараты, посмотреть
         wait.until(ExpectedConditions.elementToBeClickable(CameraUnitElementLocator));
-//          Текст названия блока ФОТОАППАРАТЫ на главной странице
-        var TextTitleBlockCameraUnit = driver.findElement(TitleBlockCameraUnitLocator).getText();
 //          Клик по элементу блока ФОТОАППАРАТЫ
         driver.findElement(CameraUnitElementLocator).click();
 //        Проверка на наличие заголовка ФОТО/ВИДЕО в разделе ФОТОАППАРАТЫ
@@ -264,39 +270,27 @@ public class HomePageTests {
     public void GoingToAlreadyOnSaleTest() {
 //        Открытие сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент банера УЖЕ В ПРОДАЖЕ
-        var CameraUnitElementLocator = By.xpath("(//div[@class='promo-image'])[4]");
-//        Элементы на баннере УЖЕ В ПРОДАЖЕ
-        var BanerElementLocator = By.xpath("(//*[@class='caption wow fadeIn'])[4]");
-//        Название товара УЖЕ В ПРОДАЖЕ
-        var AlreadyOnSaleElementLocator = By.xpath("(//*[@class='caption wow fadeIn'])[4]//div[@class='promo-desc-title']");
-//        Название товара, которое указано в разделе (ВСЕ ТОВАРЫ) после клика по баннеру УЖЕ В ПРОДАЖЕ
-        var TitleProductElementLocator = By.xpath("//h1[@class='product_title entry-title']");
-//        Элемент ГЛАВНАЯ в раздела ВСЕ ТОВАРЫ
-        var MainElementlocator = By.xpath("//div[@class='woocommerce-breadcrumb accesspress-breadcrumb']//a[1]");
-//        Элемент блока главной страницы, подтверждающий нахождение пользователя на главной странице
-        var PromoWrap1ElementLocator = By.xpath("//*[@class = 'promo-wrap1']");
 //         Скроллинг до баннера УЖЕ В ПРОДАЖЕ
         Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(CameraUnitElementLocator));
+        actions.moveToElement(driver.findElement(BannerLocator));
         actions.perform();
 //        Ожидание элементов на банере УЖЕ В ПРОДАЖЕ
         wait.until(ExpectedConditions.presenceOfElementLocated(BanerElementLocator));
-//        Текст названия товара на банере УЖЕ В ПРОДАЖЕ
-        var TextProductElementLocator = driver.findElement(AlreadyOnSaleElementLocator).getText();
+//        Текст названия товара на баннере УЖЕ В ПРОДАЖЕ
+        var TextTovara = driver.findElement(AlreadyOnSaleElementLocator).getText();
 //        Клик по банеру УЖЕ В ПРОДАЖЕ
-        driver.findElement(CameraUnitElementLocator).click();
+        driver.findElement(BannerLocator).click();
+        var TextTitleProductElement = driver.findElement(TitleProductElementLocator).getText();
 //        Проверка на наличие элемента с названием товара
         Assert.assertTrue("Элемент не найден", driver.findElement(TitleProductElementLocator).isDisplayed());
-//        Текст названия товара, которое указано в разделе (ВСЕ ТОВАРЫ) после клика по баннеру УЖЕ В ПРОДАЖЕ
-        var TextTitleProduct = driver.findElement(TitleProductElementLocator).getText();
 //        Клик по элементу ГЛАВНАЯ в разделе ПЛАНШЕТЫ
         driver.findElement(MainElementlocator).click();
 //        Проверка на наличие элемента блока главной страницы, подтверждающий нахождение пользователя на главной странице
         Assert.assertTrue("Элемент не найден", driver.findElement(PromoWrap1ElementLocator).isDisplayed());
 //        Проверка совпадения текста товара на банере УЖЕ В ПРОДАЖЕ с текстом
 //        названия товара, которое указано в разделе (ВСЕ ТОВАРЫ) после клика по баннеру УЖЕ В ПРОДАЖЕ
-        Assert.assertEquals("Неверный текст", TextProductElementLocator, TextTitleProduct);
+        Assert.assertEquals("Неверный текст", TextTovara,
+                TextTitleProductElement);
     }
 //    --------------------------------------------------------------------------------------------------------------------
 //    Тест на работоспособность кнопки со стрелочкой для возврата наверх страницы
@@ -305,12 +299,6 @@ public class HomePageTests {
     public void AkTopTest() {
 //        Открытие сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент кнопка скроллинга наверх страницы
-        var AkTopElementLocator = By.cssSelector("div[style='right: 20px;']");
-//        Элемент в самом низу страницы сайта
-        var SkillboxElementLocator = By.xpath("//*[@class = 'site-info']");
-//        Элемент вверха страницы сайта
-        var SiteBrandingElementLocator = By.id("site-branding");
 //         Скроллинг до конца страницы сайта
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(SkillboxElementLocator));
@@ -330,10 +318,6 @@ public class HomePageTests {
     public void BannerTextTest() {
 //        Открытие сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент с контактами внизу сайта
-        var BannerTextElementLocator = By.xpath("//*[@class = 'banner-text wow fadeInLeft']");
-//        Элемент в самом низу страницы сайта
-        var SkillboxElementLocator = By.xpath("//*[@class = 'site-info']");
 //         Скроллинг до конца страницы сайта
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(SkillboxElementLocator));
@@ -351,19 +335,9 @@ public class HomePageTests {
     public void ProductsViewedTest() throws InterruptedException {
 //        Открытие сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент товара БАБОЧКА в разделе распродажа
-        var ButterflyElementLocator = By.xpath("(//*[@data-wow-delay='1s'])[5]");
-//        Элемент в самом низу страницы сайта
-        var SkillboxElementLocator = By.xpath("//*[@class = 'site-info']");
-//        Элемент ГЛАВНАЯ в раздела ВСЕ ТОВАРЫ
-        var MainElementlocator = By.xpath("//div[@class='woocommerce-breadcrumb accesspress-breadcrumb']//a[1]");
-//        Элемент ПРОСМОТРЕННЫЕ ТОВАРЫ
-        var ProductsViewedElementLocator = By.id("woocommerce_recently_viewed_products-2");
-//        Элемент банера УЖЕ В ПРОДАЖЕ
-        var BannerElementLocator = By.xpath("(//div[@class='promo-image'])[4]");
-//        Скроллинг до элемента товара БАБОЧКА в разделе распродажа
+//        Скроллинг до баннера УЖЕ В ПРОДАЖЕ
         Actions Banneractions = new Actions(driver);
-        Banneractions.moveToElement(driver.findElement(BannerElementLocator));
+        Banneractions.moveToElement(driver.findElement(BannerLocator));
         Banneractions.perform();
 //        Ожидание появления элемента товара БАБОЧКА
         wait.until(ExpectedConditions.elementToBeClickable(ButterflyElementLocator));
@@ -415,37 +389,26 @@ public class HomePageTests {
     {
 //        Открытие сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент товара АННИГИЛЯТОРНАЯ ПУШКА в разделе РАСПРОДАЖА
-        var AnnihilatorCannonElementLocator = By.xpath("(//li[@data-wow-delay='0s'])[1]");
-//        Кнопка READ MORE (АННИГИЛЯТОРНАЯ ПУШКА)
-        var ReadMoreButtonElementLocator = By.xpath("(//a[@data-quantity='1'])[5]");
-//        Элемент слайдера РАСПРОДАЖА
-        var UnitElementLocator = By.xpath("(//ul)[5]");
-//        Элемент заголовка товара после клика по кнопке READ MORE (АННИГИЛЯТОРНАЯ ПУШКА)
-        var TitleAnnihilatorCannonElementLocator = By.xpath("//h1[@class = 'product_title entry-title']");
-//        Элемент текста названия товара в разделе РАСПРОДАЖА (АННИГИЛЯТОРНАЯ ПУШКА)
-        var ElementTextTovarLocator = By.xpath("(//h3)[5]");
 //        Скроллинг до элемента слайдера РАСПРОДАЖА
         Actions SaleActions = new Actions(driver);
         SaleActions.moveToElement(driver.findElement(UnitElementLocator));
         SaleActions.perform();
 //        Ожидание элемента товара в слайдере РАСПРОДАЖА
         wait.until(ExpectedConditions.elementToBeClickable(AnnihilatorCannonElementLocator));
-//        Текст названия товара в разделе РАСПРОДАЖА (АННИГИЛЯТОРНАЯ ПУШКА)
-        var TextTovarLocator =  driver.findElement(ElementTextTovarLocator).getText();
-//        Наведение курсора мыши на товар в слайдере РАСПРОДАЖА
+        var TextElementTovar = driver.findElement(ElementTovarLocator).getText();
+//        Наведение курсора мыши на товар в слайдере РАСПРОДАЖА АННИГИЛЯТОРНАЯ ПУШКА
         new Actions(driver)
                 .moveToElement(driver.findElement(AnnihilatorCannonElementLocator))
                 .perform();
 //        Клик по кнопке READ MORE
         driver.findElement(ReadMoreButtonElementLocator).click();
-//        Текст заголовка товара после клика по кнопке READ MORE (АННИГИЛЯТОРНАЯ ПУШКА)
-        var TitleText = driver.findElement(TitleAnnihilatorCannonElementLocator).getText();
+        var TextTitleAnnihilatorCannonElement = driver.findElement(TitleAnnihilatorCannonElementLocator).getText();
 //        Проверка на наличие элемента заголовка товара после клика по кнопке READ MORE (АННИГИЛЯТОРНАЯ ПУШКА)
         Assert.assertTrue("Элемент не найден", driver.findElement(TitleAnnihilatorCannonElementLocator).isDisplayed());
 //        Проверка на соответствие текста названия товара (АННИГИЛЯТОРНАЯ ПУШКА) в разделе РАСПРОДАЖА
 //        с текстом заголовка (АННИГИЛЯТОРНАЯ ПУШКА) в карточке товара
-        Assert.assertEquals("Текст не соответствует", TextTovarLocator, TitleText);
+        Assert.assertEquals("Текст не соответствует", TextElementTovar,
+                TextTitleAnnihilatorCannonElement);
 
     }
 
@@ -455,32 +418,22 @@ public class HomePageTests {
     {
 //        Открытие сайта
         driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Элемент товара БАБОЧКА в разделе распродажа
-        var ButterflyElementLocator = By.xpath("(//*[@data-wow-delay='1s'])[5]");
-//        Элемент слайдера РАСПРОДАЖА
-        var UnitElementLocator = By.xpath("(//ul)[5]");
-//        Элемент кнопка В КОРЗИНУ
-        var ButtonToCartElementLocator = By.xpath("(//a[@data-product_id='3220'])[1]");
-//        Элемент кнопки ПОДРОБНЕЕ
-        var MoreElementLocator = By.xpath("//a[@class='added_to_cart wc-forward']");
-//        Элемент заголовка раздела КОРЗИНА
-        var TitleBasketElementLocator = By.xpath("//span[@class='current']");
-//        Скроллинг до элемента слайдера РАСПРОДАЖА
+//        Скроллинг до элемента слайдера НОВЫЕ ПОСТУПЛЕНИЯ
         Actions SaleActions = new Actions(driver);
-        SaleActions.moveToElement(driver.findElement(UnitElementLocator));
+        SaleActions.moveToElement(driver.findElement(TovarNewArrvalsLocator));
         SaleActions.perform();
-//        Ожидание элемента товара в слайдере РАСПРОДАЖА
-        wait.until(ExpectedConditions.elementToBeClickable(ButterflyElementLocator));
-//        Наведение курсора мыши на товар в слайдере РАСПРОДАЖА
+//        Ожидание элемента товара в слайдере НОВЫЕ ПОСТУПЛЕНИЯ
+        wait.until(ExpectedConditions.elementToBeClickable(TovarNewArrvalsLocator));
+//        Наведение курсора мыши на товар в слайдере НОВЫЕ ПОСТУПЛЕНИЯ
         new Actions(driver)
-                .moveToElement(driver.findElement(ButterflyElementLocator))
+                .moveToElement(driver.findElement(TovarNewArrvalsLocator))
                 .perform();
-//        Наведение курсора мыши кнопку В КОРЗИНУ
+//        Наведение курсора мыши на кнопку В КОРЗИНУ
         new Actions(driver)
-                .moveToElement(driver.findElement(ButtonToCartElementLocator))
+                .moveToElement(driver.findElement(ButtonBasketElementLocator))
                 .perform();
 //        Клик по кнопке В КОРЗИНУ
-        driver.findElement(ButtonToCartElementLocator).click();
+        driver.findElement(ButtonBasketElementLocator).click();
 //        Ожидание появления кнопки ПОДРОБНЕЕ
         wait.until(ExpectedConditions.elementToBeClickable(MoreElementLocator));
 //        Клик по кнопке ПОДРОБНЕЕ
