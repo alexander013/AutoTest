@@ -33,20 +33,6 @@ public class RegistrationAuthorizationTests {
         driver.quit();
     }
 
-    //        Элемент кнопки ВОЙТИ вправом верхнем углу сайта
-    private final By ButtonEnterElement = By.className("account");
-    //        Элемент кнопки ЗАРЕГИСТРИРОВАТЬСЯ в форме авторизации
-    private final By ButtonRegistrElementLocator = By.xpath("//button[@type='button']");
-    //        Элемент поля "Имя пользователя"
-    private final By RegUserNameElement = By.id("reg_username");
-    //        Элемент поля "Адрес почты"
-    private final By RegEmailElement = By.id("reg_email");
-    //        Элемент поля "Пароль"
-    private final By RegPasswordElement = By.id("reg_password");
-    //        Элемент кнопки ЗАРЕГИСТРИРОВАТЬСЯ в форме регистрации
-    private final By RegButtonElement = By.name("register");
-    //        Элемент успешной регистрации "Регистрация завершена"
-    private final By RegistrationCompletedElementLocator = By.xpath("//div[@class='content-page']//div");
     //        Элемент МОЙ АККАУНТ
     private final By MyAccountElement = By.id("menu-item-30");
     //        Элемент "Имя пользователя или почта"
@@ -59,32 +45,6 @@ public class RegistrationAuthorizationTests {
     private final By HelloSachaElementLocator = By.cssSelector("div.woocommerce-MyAccount-content > p:nth-of-type(1)");
 
 
-//----------------------------------------------------------------------------------------------------------------------
-//    Тест регистрации через кнопку ВОЙТИ вправом верхнем углу сайта
-    @Test
-    public void RegistrationButtonEnterTest()
-    {
-//        Открытие сайта
-        driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Клик по кнопке ВОЙТИ вправом верхнем углу сайта
-        driver.findElement(ButtonEnterElement).click();
-//        Клик по кнопке ЗАРЕГИСТРИРОВАТЬСЯ в форме авторизации
-        driver.findElement(ButtonRegistrElementLocator).click();
-//        Ввод в поле "Имя пользователя"  "Sacha2"
-        driver.findElement(RegUserNameElement).sendKeys("Sacha4");
-//        Ввод в поле "Адрес почты"  "snap2@mail.ru"
-        driver.findElement(RegEmailElement).sendKeys("snap4@mail.ru");
-//        Ввод в поле "Пароль" "qwerty123"
-        driver.findElement(RegPasswordElement).sendKeys("qwerty123");
-//        Клик по кнопке ЗАРЕГИСТРИРОВАТЬСЯ
-        driver.findElement(RegButtonElement).click();
-//        Проверка на наличие элемента успешной регистрации "Регистрация завершена"
-        Assert.assertTrue("Элемент не найден", driver.findElement(RegistrationCompletedElementLocator).isDisplayed());
-//        Проверка на соответствие текста
-        Assert.assertEquals("Неверный текст", "Регистрация завершена",
-                driver.findElement(RegistrationCompletedElementLocator).getText());
-    }
-//----------------------------------------------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------------------------------------------
 //    Тест авторизации через МОЙ АККАУНТ

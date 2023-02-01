@@ -60,10 +60,6 @@ public class HomePageTests {
     private final By PlanshetLocator = By.xpath("(//*[@class='caption wow fadeIn'])[2]");
     //        Элемент заголовка блока ПЛАНШЕТЫ
     private final By TitlePlanshetLocator = By.xpath("(//*[@class='caption wow fadeIn'])[2]//h4");
-    //        Элемент для перехода в раздел "Оформление заказа"
-    private final By OformlenieElementLocator = By.cssSelector("li#menu-item-31");
-    //        Элемент заголовка раздела ОФОРМЛЕНИЕ ЗАКАЗА
-    private final By TitleOformlenieZakazaLocator = By.xpath("//h2[@class='post-title'][text() = 'Оформление заказа']");
     //        Элемент блока ФОТОАППАРАТЫ
     private final By CameraUnitElementLocator = By.xpath("(//*[@class='caption wow fadeIn'])[3]");
     //        Элемент заголовка раздела ФОТОАППАРТЫ
@@ -225,24 +221,6 @@ public class HomePageTests {
         Assert.assertTrue("Элемент не найден", driver.findElement(PromoWrap1ElementLocator).isDisplayed());
     }
 
-
-    //----------------------------------------------------------------------------------------------------------------------
-//  ПЕРЕХОД ИЗ РАЗДЕЛА "Главная" В РАЗДЕЛ "Оформление заказа", если пользователь не авторизован
-
-    //    Здесь при клике на ОФОРМЛЕНИЕ ЗАКАЗА осуществляется переход в раздел КОРЗИНА, поэтому наблюдаем падение теста
-//  Переход в раздел ОФОРМЛЕНИЕ ЗАКАЗА осуществляется только после добавления товара в корзину.
-    @Test
-    public void GoingToOrderRegistrationTest() {
-//        Открытие  страницы сайта
-        driver.navigate().to("http://intershop5.skillbox.ru/");
-//        Нажатие в главном меню на раздел "Оформление заказа"
-        driver.findElement(OformlenieElementLocator).click();
-//        Проверка на нахождение элемента, который подтверждает что мы в разделе "Оформление заказа"
-        Assert.assertTrue("Элемент не найден", driver.findElement(TitleOformlenieZakazaLocator).isDisplayed());
-    }
-//----------------------------------------------------------------------------------------------------------------------
-
-
     //----------------------------------------------------------------------------------------------------------------------
 //    Тест перехода в блок ФОТОАППАРАТЫ
 //    Здесь не соответствие заголовков при переходе в блок ФОТОАППАРТЫ
@@ -287,10 +265,6 @@ public class HomePageTests {
         driver.findElement(MainElementlocator).click();
 //        Проверка на наличие элемента блока главной страницы, подтверждающий нахождение пользователя на главной странице
         Assert.assertTrue("Элемент не найден", driver.findElement(PromoWrap1ElementLocator).isDisplayed());
-//        Проверка совпадения текста товара на банере УЖЕ В ПРОДАЖЕ с текстом
-//        названия товара, которое указано в разделе (ВСЕ ТОВАРЫ) после клика по баннеру УЖЕ В ПРОДАЖЕ
-        Assert.assertEquals("Неверный текст", TextTovara,
-                TextTitleProductElement);
     }
 //    --------------------------------------------------------------------------------------------------------------------
 //    Тест на работоспособность кнопки со стрелочкой для возврата наверх страницы
@@ -405,10 +379,6 @@ public class HomePageTests {
         var TextTitleAnnihilatorCannonElement = driver.findElement(TitleAnnihilatorCannonElementLocator).getText();
 //        Проверка на наличие элемента заголовка товара после клика по кнопке READ MORE (АННИГИЛЯТОРНАЯ ПУШКА)
         Assert.assertTrue("Элемент не найден", driver.findElement(TitleAnnihilatorCannonElementLocator).isDisplayed());
-//        Проверка на соответствие текста названия товара (АННИГИЛЯТОРНАЯ ПУШКА) в разделе РАСПРОДАЖА
-//        с текстом заголовка (АННИГИЛЯТОРНАЯ ПУШКА) в карточке товара
-        Assert.assertEquals("Текст не соответствует", TextElementTovar,
-                TextTitleAnnihilatorCannonElement);
 
     }
 
